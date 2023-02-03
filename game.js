@@ -41,6 +41,10 @@ function render(theDojo) {
 }
 
 function flag(event, element, i, j) {
+  if (element.innerText === "X"){
+    element.innerText = "";
+    return
+  }
   event.preventDefault(); //this prevents the default behavior of "oncontextmenu" (opening context menu)
   if (theDojo[i][j] == 1) {
     bombsCount--;
