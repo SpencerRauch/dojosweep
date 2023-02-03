@@ -9,7 +9,7 @@ var theDojo = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ];
 
-var emptyDojo = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+const emptyDojo = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -104,7 +104,7 @@ function howMany(i, j, element) {
 }
 
 function reset(){
-  theDojo = emptyDojo;
+  theDojo = [...emptyDojo];
   dojoDiv.innerHTML = render(theDojo);
   init(10);
 }
