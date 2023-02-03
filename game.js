@@ -41,7 +41,7 @@ function render(theDojo) {
 }
 
 function flag(event, element, i, j) {
-  event.preventDefault();
+  event.preventDefault(); //this prevents the default behavior of "oncontextmenu" (opening context menu)
   if (theDojo[i][j] == 1) {
     bombsCount--;
   }
@@ -64,18 +64,6 @@ function howMany(i, j, element) {
     reset()
     return "game over, man"
   }
-  // if (theDojo[i][j+1] !== undefined) count += theDojo[i][ j+1];
-  // if (theDojo[i][j-1] !== undefined) count += theDojo[i][ j-1];
-  // if (theDojo[i+1] !== undefined){
-  //   count += theDojo[i+1][ j];
-  //   if (theDojo[i+1][j+1] !== undefined) count += theDojo[i+1][ j+1];
-  //   if (theDojo[i+1][j-1] !== undefined) count += theDojo[i+1][ j-1];
-  // }
-  // if (theDojo[i-1] !== undefined){
-  //   count += theDojo[i-1][ j];
-  //   if (theDojo[i-1][j+1] !== undefined) count += theDojo[i-1][ j+1];
-  //   if (theDojo[i-1][j-1] !== undefined) count += theDojo[i-1][ j-1];
-  // }
 
   for (let row = i - 1; row <= i + 1; row++) {
     if (!theDojo[row]) continue;
@@ -105,7 +93,7 @@ function reset() {
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
-  
+
   dojoDiv.innerHTML = render(theDojo);
   init(10);
 }
