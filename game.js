@@ -41,11 +41,14 @@ function render(theDojo) {
 }
 
 function flag(event, element, i, j) {
+  event.preventDefault(); //this prevents the default behavior of "oncontextmenu" (opening context menu)
   if (element.innerText === "X"){
     element.innerText = "";
+    if (theDojo[i][j] == 1) {
+      bombsCount++;
+    }
     return
   }
-  event.preventDefault(); //this prevents the default behavior of "oncontextmenu" (opening context menu)
   if (theDojo[i][j] == 1) {
     bombsCount--;
   }
