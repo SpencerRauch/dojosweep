@@ -8,6 +8,17 @@ var theDojo = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ];
+
+var emptyDojo = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ];
 var dojoDiv = document.querySelector("#the-dojo");
 var bombsCount = 10;
 var uncheckedSquares = 100
@@ -93,8 +104,9 @@ function howMany(i, j, element) {
 }
 
 function reset(){
-  dojoDiv.innerHTML = render(theDojo)
-  init(10)
+  theDojo = emptyDojo;
+  dojoDiv.innerHTML = render(theDojo);
+  init(10);
 }
     
 // BONUS CHALLENGES
